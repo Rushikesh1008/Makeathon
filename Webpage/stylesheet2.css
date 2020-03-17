@@ -1,0 +1,59 @@
+body{
+	font-family: "Avenir Next";
+}
+header{
+	text-align: center;
+	background-color:#239b76;
+	height:110px;
+	opacity:0.7;
+	position:fixed;
+	top:0;
+	z-index:10;
+	width:100%;
+}
+.main-wrapper{
+	padding-top:70px;
+}
+.ward-head{
+	text-align:center;
+	font-size:25px;
+	background-color: black;
+	color:white;
+}
+.bed {
+  background-color:orange;
+}
+
+.btn {
+	text-align:center;
+  padding: 12px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width:75%;
+  height:20px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.beds1{
+	float:left;
+}
+.beds2{
+	float:right;
+}
+.beds1 h3{
+	font-size:20px;
+	color:black;
+	padding-left:30px;
+}
+.beds2 h3{
+	font-size:20px;
+	color:black;
+	padding-right: 30px;
+}
+.ward2{
+padding-top:440px;
+}

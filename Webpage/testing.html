@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient-1</title>
+	<link rel="stylesheet" href="stylesheet1.css">
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase.js"></script>
+<script>
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyBCVKVJ6VOLxrtL8ZJwQvgpEa422yjXJvM",
+    authDomain: "makerswave-86fc5.firebaseapp.com",
+    databaseURL: "https://makerswave-86fc5.firebaseio.com",
+    projectId: "makerswave-86fc5",
+    storageBucket: "makerswave-86fc5.appspot.com",
+    messagingSenderId: "699264223600",
+    appId: "1:699264223600:web:a13fcc1af007a29c7a27b5",
+    measurementId: "G-MFRMQE3P2J"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  getData();
+function getData(){
+firebase.database().ref('/').on('value', function(snapshot1) {
+   var Data1=snapshot1.val();
+ 	document.getElementById("data1").innerHTML=Data1['Fluid Remaining'];
+ })
+firebase.database().ref('/').on('value', function(snapshot2) {
+   var Data2=snapshot2.val();
+ 	document.getElementById("data2").innerHTML=Data2['Flow Rate'];
+ })
+firebase.database().ref('/').on('value', function(snapshot3) {
+   var Data3=snapshot3.val();
+ 	document.getElementById("data3").innerHTML=Data3['Bottles to be applied'];
+ })
+firebase.database().ref('/').on('value', function(snapshot4) {
+   var Data4=snapshot4.val();
+ 	document.getElementById("data4").innerHTML=Data4['Patient Calling'];
+
+ })
+}
+
+</script>
+<header>
+	<h1> Bed-1</h1>
+</header>
+<div class="btn-wrapper">
+<div class="left-wrapper">
+<h2>Fluid-Remaining : <snap id="data1"></snap> ml</h2>
+<div class="bottom-element">
+<h2>Flow-Rate : <snap id="data2"></snap> gtts per ml</h2>
+</div>
+</div>
+<div class="right-wrapper">
+<h2>Bottles-Required : <snap id="data3"></snap></h2>
+<div class="bottom-element">
+<h2>Patient-Call : <snap id="data4"></snap></h2>
+</div>
+</div>
+</div>
+
+<footer>
+	<h1>For Newly Admitted Patients Only</h1>
+	<h3 >Enter the Patient's Name:</h3>
+	<input  type="text" placeholder="Name" id="Field">
+<h3>Enter the Patient's Age:</h3>
+	<input  type="text" placeholder="Age" id="Field">
+	<h3 >Enter the Patient's Native Place:</h3>
+	<input  type="text" placeholder="Native Place" id="Field">
+	<h3>*All fields must be filled</h3>
+	<button onclick="document.getElementById('Field').value=''" class="message" >Submit</button>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Monitoring System</title>
+	<link rel="stylesheet" href="stylesheet2.css">
+	</head>
+	<body>
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase.js"></script>
+<script>
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyBCVKVJ6VOLxrtL8ZJwQvgpEa422yjXJvM",
+    authDomain: "makerswave-86fc5.firebaseapp.com",
+    databaseURL: "https://makerswave-86fc5.firebaseio.com",
+    projectId: "makerswave-86fc5",
+    storageBucket: "makerswave-86fc5.appspot.com",
+    messagingSenderId: "699264223600",
+    appId: "1:699264223600:web:a13fcc1af007a29c7a27b5",
+    measurementId: "G-MFRMQE3P2J"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  getData();
+function getData(){
+firebase.database().ref('/').on('value', function(snapshot1) {
+   var Data1=snapshot1.val();
+ 	document.getElementById("data1").innerHTML=Data1['Fluid Remaining'];
+ })
+firebase.database().ref('/').on('value', function(snapshot4) {
+   var Data4=snapshot4.val();
+ 	document.getElementById("data4").innerHTML=Data4['Patient Calling'];
+
+ })
+}
+
+</script>
+		<header>
+			<h1>Smart Drip Bottle Monitoring System</h1>
+		</header>
+		<div class="main-wrapper">
+       <div class="ward1">
+       	<div class="ward-head">
+       	<h2>Ward-1</h2>
+       	</div>
+       	<div class="beds1">
+       		 <a href="./testing.html" class="btn bed">Bed-1 </a>
+       		 <h3>Fluid-Remaining: <snap id="data1"></snap> ml,Patient-Call : <snap id="data4"></snap></h3>
+       		 <a href="#" class="btn bed">Bed-2</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		  <a href="#" class="btn bed">Bed-3</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		
+       	</div>
+       		<div class="beds2">  
+       		 <a href="#" class="btn bed">Bed-4</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		  <a href="#" class="btn bed">Bed-5</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3> 
+               <a href="#" class="btn bed">Bed-6</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       	</div>
+       </div>
+
+           <div class="ward2">
+       	<div class="ward-head">
+       	<h2>Ward-2</h2>
+       	</div>
+       	<div class="beds1">
+       		 <a href="#" class="btn bed">Bed-1</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		 <a href="#" class="btn bed">Bed-2</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		  <a href="#" class="btn bed">Bed-3</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		
+       	</div>
+       		<div class="beds2">   
+       			 <a href="#" class="btn bed">Bed-4</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+       		  <a href="#" class="btn bed">Bed-5</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+               <a href="#" class="btn bed">Bed-6</a>
+       		  <h3>Fluid-Remaining: NA ,Patient-Call : NA</h3>
+           	
+       	</div>
+       </div>
+
+		</div>
+	</body>
+</html>
